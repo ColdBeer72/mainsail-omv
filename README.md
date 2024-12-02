@@ -16,13 +16,17 @@ Always one step ahead. We work closely with developers of other projects so that
 
 OpenMediaVault (OMV) is the next generation network attached storage (NAS) solution based on Debian Linux. It contains services like SSH, (S)FTP, SMB/CIFS, RSync and many more ready to use. Thanks to the modular design of the framework it can be enhanced via plugins. openmediavault is primarily designed to be used in small offices or home offices, but is not limited to those scenarios. It is a simple and easy to use out-of-the-box solution that will allow everyone to install and administrate a Network Attached Storage without deeper knowledge.
 
-## Preparation
+## Installation
+
+### Previous steps
 
 This guide assumes that you installed OMV and OMV-EXTRAS yet and you have some experience with it. Anyway, it's well explained **[here](https://wiki.omv-extras.org/)**
 
 ### Install Docker Plugin
 
 Install the openmediavault-compose plugin and configure it (*Services/Compose/Settings menu*).
+
+<img src="img/Screenshot from 2024-12-02 19-40-10.png" alt="Network definition" style="width:700px; heght:auto;">
 
 ### Define Network for Docker
 
@@ -43,6 +47,8 @@ Open the Networks Menu (*Services/Compose/Networks*) and define a network for yo
 **IP range**: Here you define the network group of hosts that could be defined into Docker/Compose using this network name. You could calculate this group with any [IP calculator](https://jodies.de/ipcalc?host=192.168.0.0&mask1=27&mask2=) in the web. For this example I use "192.168.0.0/27" which will let us use hosts from 192.168.0.1 to 192.168.0.30.
 
 **Aux address**: Here you define a list of hosts that cannot be used for docker machines. For the example, I define my OMV host machine, which is 192.168.0.2 and another real machine, so I write "omv=192.168.0.2, other=192.168.0.13"
+
+<img src="img/Screenshot from 2024-12-02 19-39-20.png" alt="Network definition" style="width:700px; heght:auto;">
 
 ### Create Composer File
 
@@ -70,6 +76,8 @@ services:
       - CHANGE_TO_COMPOSE_DATA_PATH/mainsail/mainsail.json:/usr/share/nginx/html/config.json
     restart: unless-stopped
 ```
+
+<img src="img/Screenshot from 2024-12-02 20-15-05.png" alt="Network definition" style="width:700px; heght:auto;">
 
 In this way, after booting your docker file, the system will download the Mainsail Docker Image, and generate a mainsail/mainsail.json file in your Data folder you defined previously in the *Services/Compose/Files* menu.
 
