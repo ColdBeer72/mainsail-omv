@@ -70,7 +70,7 @@ services:
       - TZ=${TZ}
     image: ghcr.io/mainsail-crew/mainsail:latest
     networks:
-      mainsail_net:.
+      mainsail_net:
         ipv4_address: 192.168.0.12 # <-- Update to your desired Mainsail IPv4
     volumes:
       - CHANGE_TO_COMPOSE_DATA_PATH/mainsail/mainsail.json:/usr/share/nginx/html/config.json
@@ -104,3 +104,47 @@ There is an easy way to do it, but you will need to define your printers everyti
   "instancesDB": "browser"
 }
 ```
+
+# Addendum for installing **Fluidd**
+
+## What is Fluidd
+<img src="https://docs.fluidd.xyz/assets/images/fluidd_icon.svg" alt="Fluidd Logo" style="width:300px; height:auto;">
+
+Fluidd is a lightweight & responsive user interface for Klipper, the 3D printer firmware.
+
+## Installation
+
+You could use the exact installation steps. Obviously, change the name and definitions (from *Mainsail* to *Fluidd*), and in the Container File, change the line "image" from:
+
+```yaml
+image: ghcr.io/mainsail-crew/mainsail:latest
+```
+
+to:
+
+```yaml
+image: ghcr.io/fluidd-core/fluidd:latest
+```
+So it would finish like:
+```yaml
+networks:
+  fluidd_net:
+    name: MyMacVlan
+    external: true
+services:
+  fluidd:
+    container_name: fluidd
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    image: ghcr.io/fluidd-core/fluidd:latest
+    networks:
+      fluidd_net:
+        ipv4_address: 192.168.0.13 # <-- Update to your desired Mainsail IPv4
+    # volumes:
+    #   - CHANGE_TO_COMPOSE_DATA_PATH/fluidd/fluidd.json:/usr/share/nginx/html/config.json
+    restart: unless-stopped
+```
+
+As Fluidd does not uses config.json, you could just coment those lines.
