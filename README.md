@@ -1,9 +1,11 @@
+
+
 # Install Mainsail for Klipper on OpenMediaVault with Docker Compose
 
 ## What is Mainsail
-<img src="https://dalaro.design/wp-content/uploads/2024/03/logo-mainsail.png" alt="Mainsail Logo" style="width:300px; height:auto;">
+<a href="https://docs.mainsail.xyz/"><img src="https://dalaro.design/wp-content/uploads/2024/03/logo-mainsail.png" alt="Mainsail Logo" style="width:300px; height:auto;"></a>
 
-A modern and responsive user interface for Klipper. Control and monitor your printer from everywhere, from any device.
+A modern and responsive user interface for **[Klipper](https://www.klipper3d.org/)**. Control and monitor your printer from everywhere, from any device.
 
 Easy to use. The focus lies on both anticipating what users may need to do and ensuring that the user interface contains elements that are easily accessible, understandable, and user-friendly to make those actions easier.
 
@@ -12,9 +14,9 @@ Always one step ahead. We work closely with developers of other projects so that
 100% open source. Anyone can join, anyone can contribute.
 
 ## What is OpenMediaVault
-<img src="https://static-00.iconduck.com/assets.00/openmediavault-icon-96x96-ajxyqhhr.png" alt="OMV Logo" style="width:150px; height:auto;">
+<a href="https://www.openmediavault.org/"><img src="https://static-00.iconduck.com/assets.00/openmediavault-icon-96x96-ajxyqhhr.png" alt="OMV Logo" style="width:150px; height:auto;"></a>
 
-OpenMediaVault (OMV) is the next generation network attached storage (NAS) solution based on Debian Linux. It contains services like SSH, (S)FTP, SMB/CIFS, RSync and many more ready to use. Thanks to the modular design of the framework it can be enhanced via plugins. openmediavault is primarily designed to be used in small offices or home offices, but is not limited to those scenarios. It is a simple and easy to use out-of-the-box solution that will allow everyone to install and administrate a Network Attached Storage without deeper knowledge.
+**[OpenMediaVault](https://www.openmediavault.org/)** (OMV) is the next generation network attached storage (NAS) solution based on Debian Linux. It contains services like SSH, (S)FTP, SMB/CIFS, RSync and many more ready to use. Thanks to the modular design of the framework it can be enhanced via plugins. openmediavault is primarily designed to be used in small offices or home offices, but is not limited to those scenarios. It is a simple and easy to use out-of-the-box solution that will allow everyone to install and administrate a Network Attached Storage without deeper knowledge.
 
 ## Installation
 
